@@ -97,6 +97,10 @@ app.use(function(err, req, res, next){
   res.status(500).send('Something bad happened!');
 });
 
+app.get('/static/styles.bundle.js', function(req, res){
+    res.sendFile('/static/styles.bundle.js');
+});
+
 
 initDb(function(err){
   console.log('Error connecting to Mongo. Message:\n'+err);
