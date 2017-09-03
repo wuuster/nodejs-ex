@@ -102,7 +102,7 @@ app.use(function(err, req, res, next){
 });
 
 app.get('/static/styles.bundle.js', function(req, res){
-    res.sendFile(__dirname + '/static/styles.bundle.js');
+    res.sendFile('/static/styles.bundle.js');
 });
 
 initDb(function(err){
