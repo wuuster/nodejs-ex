@@ -8,11 +8,7 @@ var express = require('express'),
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
-app.use(morgan('combined'));
-app.get("*", express.static(__dirname + '/static'));
-app.get("*", express.static(__dirname));
-app.get("*", express.static("*"));
-app.use('/static',express.static(path.join(__dirname, 'static')));
+app.use(morgan('combined'))
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
@@ -65,7 +61,6 @@ var initDb = function(callback) {
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-    console.log(__dirname);
   if (!db) {
     initDb(function(err){});
   }
