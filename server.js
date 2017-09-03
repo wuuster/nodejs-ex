@@ -9,6 +9,9 @@ Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'));
+app.get("*", express.static(__dirname + '/static'));
+app.get("*", express.static(__dirname));
+app.get("*", express.static("*"));
 app.use('/static',express.static(path.join(__dirname, 'static')));
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
