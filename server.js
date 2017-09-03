@@ -97,8 +97,8 @@ app.use(function(err, req, res, next){
   res.status(500).send('Something bad happened!');
 });
 
-app.get('/static/styles.bundle.js', function(req, res){
-    res.sendFile('/static/styles.bundle.js');
+app.get('styles.bundle.js', function(req, res){
+    res.sendFile('styles.bundle.js');
 });
 
 
